@@ -7,7 +7,7 @@ public class User {
 	
 	//属性名和数据库表的字段对应
 	private int id;
-	
+
 	private String username;// 用户姓名
 	
 	private String sex;// 性别

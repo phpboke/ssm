@@ -40,7 +40,7 @@ public class UserDaoImplTest {
 		
 		//构造user对象
 		User user = new User();
-		user.setUsername("郭富城");
+		user.setUsername("郭富城1");
 		user.setBirthday(new Date());
 		user.setSex("1");
 		user.setAddress("香港九龙");
@@ -54,7 +54,7 @@ public class UserDaoImplTest {
 	{
 		UserDao userDao = new UserDaoImpl(sqlSessionFacotry);
 		
-		userDao.deleteUser(38);
+		userDao.deleteUser(39);
 	}
 			
 }

@@ -65,13 +65,13 @@ public class UserDaoImpl implements UserDao{
 
 			//执行插入操作
 			sqlSession.delete("test.deleteUser", id);
-
+			
 			// 提交事务
 			sqlSession.commit();
 
 			// 释放资源
 			sqlSession.close();
-
+			
 		}
 		
 }
