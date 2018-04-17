@@ -26,7 +26,6 @@ public class UserDaoImpl implements UserDao{
 
 			// 释放资源
 			sqlSession.close();
-
 			return user;
 
 		}

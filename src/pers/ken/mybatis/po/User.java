@@ -2,7 +2,11 @@ package pers.ken.mybatis.po;
 
 import java.util.Date;
 
-
+/**
+ * @desc 简单po类
+ * @author Administrator
+ *
+ */
 public class User {
 	
 	//属性名和数据库表的字段对应

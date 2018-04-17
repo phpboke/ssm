@@ -32,7 +32,7 @@ public class UserDaoImplTest {
 		User user = userDao.findUserById(36);
 		
 		System.out.println(user);
-		
+
 	}
 	
 	@Test
