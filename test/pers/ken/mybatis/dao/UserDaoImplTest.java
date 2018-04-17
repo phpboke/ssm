@@ -29,7 +29,7 @@ public class UserDaoImplTest {
 	public void findUserById() throws Exception {
 		UserDao userDao = new UserDaoImpl(sqlSessionFacotry);
 		
-		User user = userDao.findUserById(27);
+		User user = userDao.findUserById(36);
 		
 		System.out.println(user);
 	}
@@ -40,9 +40,9 @@ public class UserDaoImplTest {
 		
 		//构造user对象
 		User user = new User();
-		user.setUsername("刘德华");
+		user.setUsername("郭富城");
 		user.setBirthday(new Date());
-		user.setSex("2");
+		user.setSex("1");
 		user.setAddress("香港九龙");
 		
 		//插入操作
@@ -54,7 +54,7 @@ public class UserDaoImplTest {
 	{
 		UserDao userDao = new UserDaoImpl(sqlSessionFacotry);
 		
-		userDao.deleteUser(27);
+		userDao.deleteUser(38);
 	}
 			
 }
