@@ -25,8 +25,13 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 	
 	<mappers>
 		<mapper resource="sqlmap/User.xml"/>
-		<mapper resource="mapper/UserMapper.xml"/>
-		<!-- <mapper class="pers.ken.mybatis.mapper.UserMapper"/> -->
+		<!-- <mapper resource="sqlmap/UserMapper.xml"/> -->
+		
+		<!-- 通过mapper接口加载单个 映射文件
+		遵循一些规范：需要将mapper接口类名和mapper.xml映射文件名称保持一致，且在一个目录 中
+		上边规范的前提是：使用的是mapper代理方法
+		 -->
+		<mapper class="pers.ken.mybatis.mapper.UserMapper"/>
 	</mappers>
 	
 </configuration>
