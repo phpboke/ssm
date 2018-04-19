@@ -51,6 +51,13 @@ public class UserMapperTest {
 		UserCustom userCustom = new UserCustom();
 		userCustom.setSex("1");
 		userCustom.setUsername("小明");
+		
+		//传入多个id
+		List<Integer> ids = new ArrayList<Integer>();
+		ids.add(16);
+		ids.add(22);
+		userQueryVo.setIds(ids);
+		
 		userQueryVo.setUserCustom(userCustom);
 		
 		List<UserCustom> list = userMapper.findUserList(userQueryVo);

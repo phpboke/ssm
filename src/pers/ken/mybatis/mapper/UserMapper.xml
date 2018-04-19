@@ -15,12 +15,18 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<!-- 模糊查询多条数据 -->
 	<select id="findUserList" parameterType="pers.ken.mybatis.po.UserQueryVo" resultType="pers.ken.mybatis.po.UserCustom">
-		SELECT * FROM user WHERE user.sex = #{userCustom.sex} AND user.username LIKE '%${userCustom.username}%'
+		SELECT * FROM user 
+		<where>
+			<include refid="query_user_where"></include>
+		</where>
 	</select>
 	
 	<!-- 查询总数 -->
 	<select id="findUserCount" parameterType="pers.ken.mybatis.po.UserQueryVo" resultType="int">
-		SELECT COUNT(*) FROM user WHERE user.sex = #{userCustom.sex} AND user.username LIKE '%${userCustom.username}%'
+		SELECT COUNT(*) FROM user 
+		<where>
+			<include refid="query_user_where"></include>
+		</where>
 	</select>
 	
 	<select id="findUserByIdResultMap" parameterType="int" resultMap="userResultMap">
@@ -32,6 +38,23 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<id column="id_" property="id"/>
 		<result column="username_" property="username"/>
 	</resultMap>
+	
+	<!-- sql拼接 -->
+	<sql id="query_user_where">
+		<if test="userCustom != null">
+				<if test="userCustom.sex != null and userCustom != ''">
+					AND user.sex = #{userCustom.sex}
+				</if>
+				<if test="userCustom.username != null and userCustom.username != ''">
+					AND user.username LIKE '%${userCustom.username}%'
+				</if>
+				<if test="ids != null">
+					<foreach collection="ids" item="user_id" open="AND (" close=")" separator="or">
+						id=#{user_id}
+					</foreach>
+				</if>
+		</if>
+	</sql>
 	
 	<!-- 定义别名 -->
 <!-- 	<typeAliases>
