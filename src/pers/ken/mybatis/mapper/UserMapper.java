@@ -17,4 +17,7 @@ public interface UserMapper {
 	//查询用户总数，用于分页
 	public int findUserCount(UserQueryVo userQueryVo) throws Exception;
 	
+	//根据用户id通过resultMap方式查询
+	public User findUserByIdResultMap(int id) throws Exception;
+	
 }
