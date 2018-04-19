@@ -7,8 +7,10 @@ package pers.ken.mybatis.po;
  */
 public class UserQueryVo {
 	
+	//定义一个  "用户" 对象
 	private UserCustom userCustom;
 	
+	//封装用户信息
 	public UserCustom getUserCustom(){
 		return userCustom;
 	}
@@ -16,4 +18,6 @@ public class UserQueryVo {
 	public void setUserCustom(UserCustom userCustom){
 		this.userCustom = userCustom;
 	}
+	
+	//这里还可以封装其他信息。。。
 }
